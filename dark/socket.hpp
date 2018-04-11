@@ -153,16 +153,6 @@ namespace dark
 	class Socket
 	{
 	public:
-		// Convert IP Address to American Standard Code
-		static const char * in_addrtoasc(in_addr in)
-		{
-			char* buffer = new char[18];
-			unsigned char *bytes = (unsigned char *)&in;
-			snprintf(buffer, sizeof(buffer), "%d.%d.%d.%d", bytes[0], bytes[1], bytes[2], bytes[3]);
-			return buffer;
-		}
-
-
 		/* Empty Socket. */
 		Socket() : _AddrLen(sizeof(this->_Addr))
 		{
@@ -324,7 +314,7 @@ namespace dark
 		/* Returns the Network IP address in American Standard Code */
 		const char* getIP()
 		{
-			return in_addrtoasc(this->_Addr.sin_addr);
+			return inet_ntoa(this->_Addr.sin_addr);
 		}
 		/* Returns the Network Host Port */
 		int getPort()

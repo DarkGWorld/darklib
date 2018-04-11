@@ -7,22 +7,24 @@ No need for compiling/linking, just add `dark` directory into your include path 
 ```cpp
 #include <iostream>
 #include <dark/socket.hpp>
+
+dark::Socket client;
 int main()
 {
 	dark::Socket s(NULL, 8076);
 	s.bind();
 	s.listen();
-	if(s.accept(client))
+	if (s.accept(client))
 	{
-		dark::Socket client;
-		Packet packet("Hello client, You're connected.");
+		
+		dark::Packet packet("Hello client, You're connected.");
 		s.send(packet);
-		while(true)
+		while (true)
 		{
 			s.recv(packet, 314);
 			std::cout << client.getIP() << ":" << client.getPort() << " | " << packet.getData() << "\n";
 			packet.setData("Received your message!");
-			s.send(packet, 314);
+			s.send(packet);
 		}
 	}
 }

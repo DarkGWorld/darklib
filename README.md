@@ -7,7 +7,6 @@ No need for compiling/linking, just add `dark` directory into your include path 
 ```cpp
 #include <iostream>
 #include <dark/socket.hpp>
-
 dark::Socket client;
 int main()
 {
@@ -17,7 +16,6 @@ int main()
 	s.listen();
 	if (s.accept(client))
 	{
-		
 		dark::Packet packet("Hello client, You're connected.");
 		client.send(packet);
 		while (true)

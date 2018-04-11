@@ -12,19 +12,20 @@ dark::Socket client;
 int main()
 {
 	dark::Socket s(NULL, 8076);
+	s.setProtocol(dark::TCPSocket);
 	s.bind();
 	s.listen();
 	if (s.accept(client))
 	{
 		
 		dark::Packet packet("Hello client, You're connected.");
-		s.send(packet);
+		client.send(packet);
 		while (true)
 		{
-			s.recv(packet, 314);
+			client.recv(packet, 314);
 			std::cout << client.getIP() << ":" << client.getPort() << " | " << packet.getData() << "\n";
 			packet.setData("Received your message!");
-			s.send(packet);
+			client.send(packet);
 		}
 	}
 }

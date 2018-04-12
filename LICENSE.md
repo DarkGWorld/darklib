@@ -1,6 +1,6 @@
 MIT License
-Copyright (c) 2018 Kira(G)Sama <kiragsama@gmail.com>
 Copyright (c) 2018 Dark(G)World
+Copyright (c) 2018 Kira(G)Sama <kiragsama@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

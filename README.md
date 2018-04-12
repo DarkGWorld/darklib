@@ -25,23 +25,26 @@ TCP Server
 ```cpp
 #include <iostream>
 #include <dark/socket.hpp>
-dark::Socket client;
+dark::Socket client; // creates a socket for some lucky client.
 int main()
 {
-	dark::Socket s(NULL, 8076);
-	s.setProtocol(dark::TCPSocket);
-	s.bind();
-	s.listen();
-	if (s.accept(client))
+	dark::Socket s(NULL, 8076); // NULL for any address, port 8076
+	s.setProtocol(dark::TCPSocket); // dark::TCPSocket == SOCK_STREAM in C
+	s.bind(); // bind the socket, bc we're the server!
+	s.listen(); // start listening
+	if (s.accept(client)) // accept the upcoming client to this socket `client` (like an room number or ID)
 	{
-		dark::Packet packet("Hello client, You're connected.");
-		client.send(packet);
-		while (true)
+		// client connection request is accepted
+		dark::Packet packet("Hello client, You're connected."); // Get your packet ready
+		// note that the size of this packet is automatically assigned
+		client.send(packet); // send your packet, note that we used the `client` socket to send him
+		while (true) // infinite data exchange between you and the client
 		{
-			client.recv(packet, 314);
+			client.recv(packet, 314); // we want to receive a packet with size of 314 bytes and assign it to `packet`
+			// now print what we recieved with some details
 			std::cout << client.getIP() << ":" << client.getPort() << " | " << packet.getData() << "\n";
-			packet.setData("Received your message!");
-			client.send(packet);
+			packet.setData("Received your message!"); // prepare your reply on what he sent
+			client.send(packet); // send back a packet of size 22 and it is *Received your message!*
 		}
 	}
 }

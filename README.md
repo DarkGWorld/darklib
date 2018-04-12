@@ -18,7 +18,9 @@ Header-Only Libraries
 No need for compiling/linking, just add `dark` directory into your include path and let's get coding!
 
 
-TCP Server example
+# Examples
+
+TCP Server
 -
 ```cpp
 #include <iostream>

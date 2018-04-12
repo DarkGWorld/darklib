@@ -1,6 +1,11 @@
 # darklib
 Dark World Library for C++ Sockets with some additional functions (e.g *real* random number generator)
 
+Supported
+-
+Socket: **TCP**, **UDP**, **HTTP**, **SSL** *client-only*<br>
+Math: **random/abs/mean/reverse/first,last-digit**
+
 Pre-Beta
 -
 this API is created by me for just learning, no specfic time for "releasing" a version.<br>

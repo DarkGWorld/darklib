@@ -3,7 +3,7 @@ Dark World Library for C++ Sockets with some additional functions (e.g *real* ra
 
 Pre-Beta
 -
-this API is created by me for learning purposes, no specfic time for "releasing" a version.<br>
+this API is created by me for just learning, no specfic time for "releasing" a version.<br>
 I don't know either if it's good to use it as your essential Socket API, but<br>
 I'll try to make all things possible. Feel free to help developing it.
 

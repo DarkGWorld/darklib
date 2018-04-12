@@ -40,7 +40,8 @@ int main()
 		client.send(packet); // send your packet, note that we used the `client` socket to send him
 		while (true) // infinite data exchange between you and the client
 		{
-			client.recv(packet, 314); // we want to receive a packet with size of 314 bytes and assign it to `packet`
+			// we want to receive a packet with maximum size of 314 bytes
+			client.recv(packet, 314); // assigning it to `packet`
 			// now print what we recieved with some details
 			std::cout << client.getIP() << ":" << client.getPort() << " | " << packet.getData() << "\n";
 			packet.setData("Received your message!"); // prepare your reply on what he sent

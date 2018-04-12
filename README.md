@@ -1,6 +1,10 @@
 # darklib
 Dark World Library for C++ Sockets with some additional functions (e.g *real* random number generator)
 
+# Pre-Beta
+this API is created by me for learning purposes, no specfic time for "releasing" a version ***still 15th.***<br>
+I don't know either if it's good to use it as your essential Socket API, but I'll try to make all things possible. ***You gotta help me too!***
+Feel free to help developing it ***Coding for fun, never worked in a team.***
 Header-Only Libraries
 -
 No need for compiling/linking, just add `dark` directory into your include path and let's get coding!

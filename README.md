@@ -30,4 +30,3 @@ int main()
 ```
 Feel free to submit a bug, improve a function, look at the source code<br>
 and if you have a better solutions or ideas, I'd like to know.
-

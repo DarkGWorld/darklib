@@ -5,7 +5,7 @@ Supported
 -
 Socket: **TCP**, **UDP**, (**SSL** *client-only*)<br>
 Web: **HTTP**, **HTTPS**, **Headers**, **GET**, **POST**<br>
-Math: **random/abs/mean/reverse/first,last-digit**
+Math: **random, abs, mean, reverse, first/last-digit, digits, type**
 
 Pre-Beta
 -

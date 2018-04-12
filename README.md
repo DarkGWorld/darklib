@@ -2,6 +2,7 @@
 Dark World Library for C++ Sockets with some additional functions (e.g *real* random number generator)
 
 # Pre-Beta
+
 this API is created by me for learning purposes, no specfic time for "releasing" a version ***still 15th.***<br>
 I don't know either if it's good to use it as your essential Socket API, but I'll try to make all things possible. ***You gotta help me too!***
 Feel free to help developing it ***Coding for fun, never worked in a team.***
@@ -32,5 +33,3 @@ int main()
 	}
 }
 ```
-Feel free to submit a bug, improve a function, look at the source code<br>
-and if you have a better solutions or ideas, I'd like to know.

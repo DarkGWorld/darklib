@@ -1,3 +1,5 @@
+#ifndef DARK_CHAR
+#define DARK_CHAR
 namespace dark
 {
 	namespace c
@@ -16,3 +18,4 @@ namespace dark
 		}
 	}
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef DARK_STRING
+#define DARK_STRING
 #include "char.hpp"
 #include <memory>
 namespace dark
@@ -86,3 +88,4 @@ namespace dark
 		}
 	}
 }
+#endif

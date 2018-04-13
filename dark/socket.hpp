@@ -1,7 +1,7 @@
 #pragma once
 #ifndef  DARK_SOCKET_H
 #define  DARK_SOCKET_H
-#include "string.h"
+#include "string.hpp"
 #include <string>
 #include <vector>
 #include <openssl/bio.h>

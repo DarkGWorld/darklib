@@ -10,8 +10,8 @@
 #define DARK_FALSE 0
 #ifdef __cplusplus
 #include "math.hpp"
-#include "string.h"
-#include "char.h"
+#include "string.hpp"
+#include "char.hpp"
 namespace dark{
 	
 }

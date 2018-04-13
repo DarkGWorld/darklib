@@ -28,10 +28,14 @@ TCP Server
 dark::Socket client; // creates a socket for some lucky client.
 int main()
 {
-	dark::Socket s(NULL, 8076); // NULL for any address, port 8076
-	s.setProtocol(dark::TCPSocket); // dark::TCPSocket == SOCK_STREAM in C
-	s.bind(); // bind the socket, bc we're the server!
-	s.listen(); // start listening
+	// NULL for any address, port 8076
+	dark::Socket s(NULL, 8076);
+	// dark::TCPSocket == SOCK_STREAM in C
+	s.setProtocol(dark::TCPSocket);
+	// bind the socket, bc we're the server!
+	s.bind();
+	// start listening
+	s.listen(); 
 	if (s.accept(client)) // accept the upcoming client to this socket `client` (like an room number or ID)
 	{
 		// client connection request is accepted

@@ -1,9 +1,9 @@
 #ifndef DARK_STRING
 #define DARK_STRING
-#include "char.hpp"
-#include <memory>
 namespace dark
 {
+#include "char.hpp"
+#include <memory>
 	namespace cstr
 	{
 		// return the length of `cstr`

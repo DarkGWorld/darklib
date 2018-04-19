@@ -1,3 +1,7 @@
+#ifndef DARK_IO
+#define DARK_IO
+namespace dark
+{
 #include <filesystem>
 
 #include <stdio.h> // FILENAME_MAX
@@ -11,8 +15,6 @@
 #endif
 #pragma warning(disable:4996)
 #pragma warning(disable:4018)
-namespace dark
-{
 	namespace io
 	{
 		using namespace std;
@@ -71,3 +73,4 @@ namespace dark
 		}
 	}
 }
+#endif

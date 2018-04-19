@@ -2,11 +2,12 @@
 #ifndef  DARK_SOCKET_H
 #define  DARK_SOCKET_H
 #include "string.hpp"
+#include "openssl/bio.h"
+#include "openssl/ssl.h"
+#include "openssl/err.h"
+
 #include <string>
 #include <vector>
-#include <openssl/bio.h>
-#include <openssl/ssl.h>
-#include <openssl/err.h>
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -16,7 +17,6 @@
 
 #pragma warning(disable:4996)
 #pragma warning(disable:4018)
-#define WIN32_LEAN_AND_MEAN
 #define _WINSOCKAPI_
 #pragma comment(lib, "Ws2_32.lib")
 #else

@@ -4,9 +4,7 @@
 #include <memory>
 namespace dark
 {
-	typedef char * cstr;
-	typedef char ** cstrarr;
-	namespace str
+	namespace cstr
 	{
 		// return the length of `cstr`
 		int length(const char * cstr)
@@ -42,17 +40,17 @@ namespace dark
 					++n;
 			return n;
 		}
-		cstr cpy(const cstr from)
+		char * cpy(const char * from)
 		{
 			if (!from)
 				return 0;
 			size_t len = length(from);
-			cstr to = new char[len];
+			char * to = new char[len];
 			for (int i = len; i > -1; --i)
 				to[i] = from[i];
 			return to;
 		}
-		cstrarr split(const cstr string, cstrarr to, char delimiter)
+		char ** split(const char * string, char ** to, char delimiter)
 		{
 			size_t len = length(string);
 			int n = 0;
@@ -73,18 +71,41 @@ namespace dark
 			}
 			return to;
 		}
-		cstr allocate(int bytes)
+		char * allocate(int bytes)
 		{
-			return (cstr)calloc(1, bytes);
+			return (char *)calloc(1, bytes);
 		}
-		cstrarr allocate(int slots, int bytes)
+		char ** allocate(int slots, int bytes)
 		{
-			const char ** arr = (const char **)calloc(1, slots);
+			char ** arr = (char **)calloc(1, slots);
 			for (int i = 0; i <= slots; ++i)
 			{
-				arr[i] = (cstr)calloc(1, bytes);
+				arr[i] = (char *)calloc(1, bytes);
 			}
-			return (cstrarr)arr;
+			return arr;
+		}
+		int endsWith(const char * cstring, const char * end)
+		{
+			if (cstring && end)
+			{
+				int len = strlen(cstring);
+				int end_len = strlen(end);
+				for (int i = 0; i <= end_len; ++i)
+					if (cstring[len - end_len + i] != end[i])
+						return 0;
+				return 1;
+			}
+			return 0;
+		}
+	}
+	namespace str
+	{
+		int endsWith(std::string str, std::string end)
+		{
+				for (int i = 0; i <= end.size(); ++i)
+					if (str[str.size() - end.size() + i] != end[i])
+						return 0;
+				return 1;
 		}
 	}
 }
